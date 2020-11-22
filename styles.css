@@ -36,8 +36,10 @@ body{
     background-image: url("images/bg-pattern-desktop.svg");
     background-position: 100%;
     background-size: 160%;
+    background-repeat: no-repeat;
     position: relative;
     overflow: hidden;
+    border: 1px solid green;
 }
 .item{
     margin: 1rem;
@@ -76,16 +78,16 @@ body{
 .item-body-content{
     font-style: "Kumbh Sans", sans-serif;
     font-size: 14px;
-    color: hsl(238, 29%, 16%);
+    color: hsl(240, 6%, 50%);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
 .lady-illustration{
+    border: 1px solid red;
     width: auto;
-    height: auto;
     position: relative;
-    bottom: -10%;
+    top: calc(233px - 8vw);
     right: 20%;
 }
 .lady-illustration>img{
@@ -94,7 +96,62 @@ body{
 .box-thingy{
     width: 15%;
     position: absolute;
-    top: 22vw;
+    top: calc(35vh + 5vw);
     left: 7%;
     z-index: 69;
+}
+@media(max-width: 375px){
+    .supreme-container{
+        grid-template-columns: 3% 1fr 3%;
+        grid-template-rows: 32vw 20vw 70%;
+        width: 90vw;
+        min-height: 60vh;
+        margin: 20vh auto;
+    }
+    .decoration-svg{
+        grid-column: 2/3;
+        grid-row: 1/2;
+        background-size: 80%;
+        overflow: visible;
+        background-repeat: no-repeat;
+        background-position: right 50% top -35vw;
+        height: 100%;
+    }
+    .lady-illustration{
+        top: -30vw;
+        right: 0;
+    }
+    .lady-illustration>img{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+    }
+    .faq{
+        grid-row: 2/3;
+        justify-self: center;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+    .big-container{
+        grid-row: 3/4;
+    }
+    .box-thingy{
+        transform-origin: bottom;
+        width: 26%;
+        left: 13%;
+        top: 16vh;
+    }
+    .item-body{
+        padding-bottom: 0.4rem;
+    }
+    .item-body-content{
+        font-size: 12px;
+    }
+    .item-header{
+        font-size: 14px;
+        padding-bottom: 0.6rem;
+    }
+    .item{
+        margin: 0.6rem;
+    }
 }
